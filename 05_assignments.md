@@ -14,13 +14,13 @@ The print statement also works for integers.
 Sometimes you may find it helpful or necessary to change a value of one type to another type. For example the value "3" is a string because it enclosed in quotes. But the contents of the string, the character 3 is also a valid integer. You can convert a value to an integer using the int() built in function. 
 
 Try these examples in the python shell:
-- int("7")
-- int(3.2)
-- int("3.2")
-- int(5.7)
-- int("puppy")
-- ans="12"
-- int(ans)
+> int("7")
+> int(3.2)
+> int("3.2")
+> int(5.7)
+> int("puppy")
+> ans="12"
+> int(ans)
 
 The print statement also works for integers.
 
