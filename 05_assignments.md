@@ -10,9 +10,8 @@ These values belong to different data types: 2 is an integer, and "Hello, World!
 
 The print statement also works for integers.
 
-<hr>
 
-### Converting between types.
+#### Converting between types.
 Sometimes you may find it helpful or necessary to change a value of one type to another type. For example the value "3" is a string because it enclosed in quotes. But the contents of the string, the character 3 is also a valid integer. You can convert a value to an integer using the int() built in function. 
 
 Try these examples in the python shell:
@@ -40,6 +39,7 @@ When you type a large integer, you might be tempted to use commas between groups
 
 Students will experiment with these different types of Data Types to learn the difference. 
 
+<hr>
 
 ## Definitions and use
 In the context of programming, a function is a named sequence of statements that performs a desired operation. This operation is specified in a function definition. In Python, the syntax for a function definition is:
