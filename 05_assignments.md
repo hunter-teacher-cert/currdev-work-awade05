@@ -41,77 +41,143 @@ Students will experiment with these different types of Data Types to learn the d
 
 <hr>
 
-## Definitions and use
-In the context of programming, a function is a named sequence of statements that performs a desired operation. This operation is specified in a function definition. In Python, the syntax for a function definition is:
+## Working with Strings and Data Types
 
-def NAME( LIST OF PARAMETERS ):<br>
-     STATEMENTS<br>
-You can make up any names you want for the functions you create, except that you can’t use a name that is a Python keyword. The list of parameters specifies what information, if any, you have to provide in order to use the new function.
+The goals for this assignment are:
 
-There can be any number of statements inside the function, but they have to be indented from the def. In the examples in this book, we will use the standard indentation of four spaces. Function definitions are the first of several compound statements we will see, all of which have the same pattern:
+- Manipulate Python numeric and string data types
 
-A header, which begins with a keyword and ends with a colon.
-A body consisting of one or more Python statements, each indented the same amount – 4 spaces is the Python standard – from the header.
-In a function definition, the keyword in the header is def, which is followed by the name of the function and a list of parameters enclosed in parentheses. The parameter list may be empty, or it may contain any number of parameters. In either case, the parentheses are required.
+- Learn to apply the accumulator pattern to numeric and string types to solve problems
 
-The first couple of functions we are going to write have no parameters, so the syntax looks like this:
+- Learn to iterate over data using for loops
 
-def new_line():<br>
-    print("")          # a print statement with an empty string prints a new line<br>
-This function is named new_line. Its body contains only a single statement, which outputs a newline character. (That’s what happens when you use a print command with an empty string.)
+- Practice string operations +, len(), []
 
-Defining a new function does not make the function run. To do that we need a function call. Function calls contain the name of the function being executed followed by a list of values, called arguments, which are assigned to the parameters in the function definition. Our first examples have an empty parameter list, so the function calls do not take any arguments. Notice, however, that the parentheses are required in the function call:
+1. Farmers' Market
+A vendor at a local farmers' market wants a program to tally sales of apples over the harvest season. Write a program called market.py that computes the total sales over a number of days entered by the user. The program should prompt the user for the number of bushels of apples sold per day and the price per bushel each day. Before exiting, the program should print the total number of bushels sold and the total amount of sales in dollars.
 
-print("First Line.")<br>
-new_line()<br>
-print("Second Line.")<br>
-The output of this program is:<br>
+Two examples of the running program are shown below. User input is shown in bold.
 
-First line.
+```
+$ python3 market.py
+Enter number of sales days: 2
 
-Second line.<br>
-The extra space between the two lines is a result of the new_line() function call. What if we wanted more space between the lines? We could call the same function repeatedly:
+Enter number of bushels sold: 3.5
+Enter price per bushel: 24
 
-print("First Line.")<br>
-new_line()<br>
-new_line()<br>
-new_line()<br>
-print("Second Line.")<br>
-Or we could write a new function named three_lines that prints three new lines:
+Enter number of bushels sold: 2
+Enter price per bushel: 22.50
 
-def three_lines():<br>
-    new_line()<br>
-    new_line()<br>
-    new_line()<br>
+Total bushels sold: 5.5
+Total sales: $129.0
 
-print("First Line.")<br>
-three_lines()<br>
-print("Second Line.")<br>
-This function contains three statements, all of which are indented by four spaces. Since the next statement is not indented, Python knows that it is not part of the function.
+$ python3 market.py
+Enter number of sales days: 3
 
-You should notice a few things about this program:
+Enter number of bushels sold: 1
+Enter price per bushel: 20
 
-You can call the same procedure repeatedly. In fact, it is quite common and useful to do so.
-You can have one function call another function; in this case three_lines calls new_line.
-So far, it may not be clear why it is worth the trouble to create all of these new functions. Actually, there are a lot of reasons, but this example demonstrates two:
+Enter number of bushels sold: 1
+Enter price per bushel: 20
 
-Creating a new function gives you an opportunity to name a group of statements. Functions can simplify a program by hiding a complex computation behind a single command and by using English words in place of arcane code.
-Creating a new function can make a program smaller by eliminating repetitive code. For example, a short way to print nine consecutive new lines is to call three_lines three times.
-Pulling together the code fragments from the previous section into a program named tryme1.py, the whole program looks like this:
+Enter number of bushels sold: 1
+Enter price per bushel: 20
 
-def new_line():<br>
-    print("")<br>
+Total bushels sold: 3.0
+Total sales: $60.0
 
-def three_lines():<br>
-    new_line()<br>
-    new_line()<br>
-    new_line()<br>
+```
+2. Text Slant
 
-print("First Line.")<br>
-three_lines()<br>
-print("Second Line.")<br>
+Write a program called txtslant.py that prompts the user for a string, and then prints one character of the string per line in a diagonal pattern as shown below.
 
-This program contains two function definitions: new_line and three_lines. Function definitions get executed just like other statements, but the effect is to create the new function. The statements inside the function do not get executed until the function is called, and the function definition generates no output.
+```
+$ python3 txtslant.py
+Enter a phrase: weee!
+w
+ e
+  e
+   e
+    !
 
-As you might expect, you have to create a function before you can execute it. In other words, the function definition has to be executed before the first time it is called.
+$ python3 txtslant.py
+Enter a phrase: autumnal equinox
+a
+ u
+  t
+   u
+    m
+     n
+      a
+       l
+
+         e
+          q
+           u
+            i
+             n
+              o
+               x
+               
+```
+3. Text Weave
+
+Write a program called txtweave.py that prompts the user for a string msg, and then prints out a new string consisting of the characters in msg in forward and reverse interleaved. For example, if the user enters the string hello, you would take the letters in the original order:
+
+```
+h e l l o
+```
+
+and reverse order
+```
+ o l l e h
+ ```
+ 
+and interleave them to form the final string
+```
+hoelllleoh
+```
+Some examples of the running program are shown below. User input is shown in bold.
+
+```
+$ python3 txtweave.py
+Enter a phrase: cs21
+
+Text weave is:
+c1s22s1c
+
+$ python3 txtweave.py
+Enter a phrase: swarthmore
+Text weave is:
+sewraormthhtmroarwes
+```
+
+4. Text Grid
+
+Write a program called txtgrid.py that makes a grid pattern out of strings using + and - symbols. Your program should prompt the user for the number of rows and columns in the grid and the width of all the columns. Each column should consist of width number of - symbols and adjacent columns should be seperated by a +. To design your program figure out how to build a single string that represents a single row in the grid. Then print that string out for the specified number of rows.
+
+Some examples of the running program are shown below. User input is shown in bold.
+```
+$ python3 txtgrid.py
+Enter number of columns: 3
+
+Enter width of column: 2
+Enter number of rows: 4
+
++--+--+--+
++--+--+--+
++--+--+--+
++--+--+--+
+
+$ python3 txtgrid.py
+Enter number of columns: 4
+Enter width of column: 8
+Enter number of rows: 5
+
++--------+--------+--------+--------+
++--------+--------+--------+--------+
++--------+--------+--------+--------+
++--------+--------+--------+--------+
++--------+--------+--------+--------+
+```
 
