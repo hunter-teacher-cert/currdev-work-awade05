@@ -10,6 +10,8 @@ These values belong to different data types: 2 is an integer, and "Hello, World!
 
 The print statement also works for integers.
 
+<hr>
+
 ### Converting between types.
 Sometimes you may find it helpful or necessary to change a value of one type to another type. For example the value "3" is a string because it enclosed in quotes. But the contents of the string, the character 3 is also a valid integer. You can convert a value to an integer using the int() built in function. 
 
